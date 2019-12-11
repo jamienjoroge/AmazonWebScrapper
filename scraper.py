@@ -3,10 +3,10 @@ from bs4 import BeautifulSoup
 import smtplib
 import time
 
-URL = 'https://www.amazon.com/HP-Pavilion-Processor-Solid-State-13-an0010nr/dp/B07HBKMLLN/ref=sr_1_6?keywords=hp+envy+14+refurbished&qid=1576050781&sr=8-6'
+URL = 'INSERT PRODUCT URL'
 
 #get this by typing "my user agent on your browser"
-headers = {"User-Agent": 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0'}
+headers = {"User-Agent": 'USER AGENT AS FROM THE BROWSER'}
 
 def checkPrice():
     page = requests.get(URL, headers=headers)
@@ -31,7 +31,7 @@ def send_email():
     server.login('from_email', 'password')
 
     Subject = 'Alert! Price dropped'
-    body = 'check price for hp envy 13 at: https://www.amazon.com/HP-Pavilion-Processor-Solid-State-13-an0010nr/dp/B07HBKMLLN/ref=sr_1_6?keywords=hp+envy+14+refurbished&qid=1576050781&sr=8-6'
+    body = 'check price for hp envy 13 at: PRODUCT URL'
     
     msg = f"Subject: {Subject}\n\n  Body: {body}"
 
